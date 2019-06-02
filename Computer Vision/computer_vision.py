@@ -1,19 +1,11 @@
-#https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/?apiSlug=computer-vision&country=India&allowContact=true&fromLogin=True
-#https://docs.microsoft.com/en-us/azure/cognitive-services/Computer-vision/quickstarts/python-disk
-#https://westcentralus.api.cognitive.microsoft.com/vision/v1.0
-#https://westcentralus.api.cognitive.microsoft.com/vision/v2.0
-#Key 1: 165c3dcb69f04f3d821ba075de4c8b28
-#Key 2: 474940522ac946a7bfe540c6c36aaa08
 import requests
 import matplotlib.pyplot as plt
 from PIL import Image
-from io import BytesIO
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import filedialog
 import numpy as np
 import cv2
-import datetime
 from tkinter import messagebox
 
 def getImage():
@@ -30,7 +22,7 @@ def saveImage():
     except:
         messagebox.showinfo("Message", "first browse an image using Browse Image button")
 def proceessImage():
-    subscription_key = "165c3dcb69f04f3d821ba075de4c8b28"
+    subscription_key = "<Subscription Key>"
     assert subscription_key
     vision_base_url = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/"
     analyze_url = vision_base_url + "analyze"
@@ -66,23 +58,18 @@ def proceessImage():
     panel.image = img
     panel.place(x=10, y=10)
 
-    varname = StringVar()
     Name = Label(window,text=Nametext,font='Helvetica 18 bold',fg="red")
     Name.place(x=600,y=20)
-
-    varage = StringVar()
+    
     Name = Label(window,text=captionstext,font='Helvetica 12 bold')
     Name.place(x=550,y=60)
 
-    varage = StringVar()
     Name = Label(window,text="Width: "+metadatatextw,font='Helvetica 14 bold')
     Name.place(x=610,y=100)
 
-    varage = StringVar()
     Name = Label(window,text="Height: "+metadatatexth,font='Helvetica 14 bold')
     Name.place(x=600,y=155)
 
-    varage = StringVar()
     Name = Label(window,text="Format: "+metadatatextf,font='Helvetica 14 bold')
     Name.place(x=600,y=180)
 
